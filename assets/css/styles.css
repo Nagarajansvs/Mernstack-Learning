@@ -32,7 +32,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 /* Navigation */
@@ -87,12 +87,12 @@ body {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 5px;
+  gap: 0.313rem;
 }
 
 .nav-toggle span {
-  width: 25px;
-  height: 3px;
+  width: 1.563rem;
+  height: 0.188rem;
   background: var(--text-color);
   transition: var(--transition);
 }
@@ -213,9 +213,9 @@ body {
 
 /* Buttons */
 .btn {
-  padding: 12px 30px;
+  padding: 0.75rem 1.875rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.313rem;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -231,7 +231,7 @@ body {
 
 .btn-primary:hover {
   background: #357abd;
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem);
 }
 
 .btn-secondary {
@@ -243,7 +243,7 @@ body {
 .btn-secondary:hover {
   background: white;
   color: var(--primary-color);
-  transform: translateY(-2px);
+  transform: translateY(-0.125rem);
 }
 
 /* Section Styles */
@@ -266,7 +266,7 @@ section {
   height: 4px;
   background: var(--primary-color);
   margin: 10px auto 0;
-  border-radius: 2px;
+  border-radius: 0.125rem;
 }
 
 /* About Section */
@@ -347,8 +347,8 @@ section {
 }
 
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.313rem);
+  box-shadow: 0 0.313rem 20px rgba(0, 0, 0, 0.15);
 }
 
 .skill-icon {
@@ -402,8 +402,8 @@ section {
 }
 
 .education-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.313rem);
+  box-shadow: 0 0.313rem 20px rgba(0, 0, 0, 0.15);
 }
 
 .education-icon {
@@ -464,8 +464,8 @@ section {
 }
 
 .experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.313rem);
+  box-shadow: 0 0.313rem 20px rgba(0, 0, 0, 0.15);
 }
 
 .experience-icon {
@@ -523,9 +523,94 @@ section {
 .project_list li i {
   position: absolute;
   left: 0;
-  top: 5px;
+  top: 0.313rem;
   font-size: 0.5rem;
   color: var(--primary-color);
+}
+
+/* Gallery Section */
+.gallery {
+  background: var(--bg-color);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-grid .gallery-item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  max-width: 300px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 2rem 1.5rem 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-overlay p {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+}
+
+/* Gallery Flex Section */
+.gallery-flex {
+  background: var(--light-bg);
+}
+
+.gallery-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.gallery-flex .gallery-item {
+  flex: 0 0 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
 }
 
 /* Projects Section */
@@ -548,7 +633,7 @@ section {
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-0.313rem);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -590,7 +675,7 @@ section {
 .tag {
   background: var(--primary-color);
   color: white;
-  padding: 4px 12px;
+  padding: 4px 0.75rem;
   border-radius: 15px;
   font-size: 0.8rem;
 }
@@ -686,9 +771,9 @@ section {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--border-color);
-  border-radius: 5px;
+  padding: 0.75rem;
+  border: 0.063rem solid var(--border-color);
+  border-radius: 0.313rem;
   font-size: 1rem;
   font-family: inherit;
   transition: var(--transition);
@@ -778,6 +863,19 @@ section {
 
   .education-grid {
     grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-flex-container {
+    flex-direction: column;
+  }
+
+  .gallery-flex .gallery-item {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .projects-grid {
