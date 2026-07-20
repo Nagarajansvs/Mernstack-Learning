@@ -886,6 +886,12 @@ section {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  .experience-card {
+    display: block !important;
+  }
+  .experience-icon {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 480px) {
