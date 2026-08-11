@@ -15,11 +15,15 @@
   --text-dark: #333;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Oswald", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--text-dark);
-  overflow-x: hidden;
   background:
     linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
     url("https://www.india.gov.in/image/independenceday/graphics.png");
@@ -97,17 +101,15 @@ body.loaded .page-loader {
 /* Fixed bottom GIF (celebration) */
 .fixed-gif {
   position: fixed;
-  left: 5px;
-  right: 5px;
+  left: 0;
+  right: 0;
   bottom: 0;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: flex-end;
   pointer-events: none;
   z-index: 1500;
-  padding: 12px;
-}
-.fixed-gif {
+  padding: 0 8px 8px;
   overflow: hidden;
 }
 
@@ -772,7 +774,13 @@ nav {
 
 @media (max-width: 860px) {
   .fighter-card {
-    min-height: 360px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .fixed-gif {
+    display: none;
   }
 }
 
